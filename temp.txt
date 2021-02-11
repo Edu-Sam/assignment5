@@ -1,0 +1,13 @@
+fig1=go.Figure()
+male=titanic_data[titanic_data["Sex"]=="male"]
+female=titanic_data[titanic_data["Sex"]=="female"]
+fig1.add_trace(go.Histogram(x=male,histnorm='percent',
+    name='male'))
+fig1.add_trace(go.Histogram(x=female,histnorm='percent',
+    name='female'))
+
+# Overlay both histograms
+fig1.update_layout(barmode='overlay')
+# Reduce opacity to see both histograms
+fig1.update_traces(opacity=0.75)
+fig1.show()
